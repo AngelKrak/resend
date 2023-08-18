@@ -7,6 +7,7 @@ const app = express();
 const port = 3000;
 
 const resend = new Resend('re_RGyA3Q2F_L5RjaogADQFvrQ5jPgBbbUS8');
+console.log(resend.emails.send)
 
 // Configuración de Express
 app.use(express.urlencoded({ extended: true }));
