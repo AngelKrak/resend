@@ -9,24 +9,30 @@ const instance = axios.create({
 });
 
 // Definir la función para enviar correos
-async function sendEmail() {
+async function sendEmail({ from, to, subject, html, apiKey }) {
+  if (!apiKey || apiKey?.length == 0) {
+    return {
+      error: true,
+      message: 'La api key es requerida para continuar',
+    };
+  }
   const data = {
-    from: 'onboarding@resend.dev',
-    to: 'angel-krak@hotmail.com',
-    subject: 'Hello World',
-    html: '<p>Congrats on sending your <strong>first email</strong>!</p>',
+    from,
+    to,
+    subject,
+    html,
   };
 
   try {
     const response = await instance.post('/emails', data, {
       headers: {
-        Authorization: 'Bearer re_fCjCybPP_59drTgsqJSAUXuydsH468unX',
+        Authorization: `Bearer ${apiKey}`,
       },
     });
-    console.log('Email sent:', response.data);
     return response;
   } catch (error) {
-    console.error('Error sending email:', error);
-    return error;
+    return { error };
   }
 }
+
+module.exports = sendEmail;

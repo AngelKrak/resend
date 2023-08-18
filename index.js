@@ -1,12 +1,13 @@
 const express = require('express');
-const { Resend } = require('resend');
+// const { Resend } = require('resend');
 const ejs = require('ejs');
 const fs = require('fs');
+const sendMail = require('./sendMail');
 
 const app = express();
 const port = 3000;
 
-const resend = new Resend('re_RGyA3Q2F_L5RjaogADQFvrQ5jPgBbbUS8');
+// const resend = new Resend('re_RGyA3Q2F_L5RjaogADQFvrQ5jPgBbbUS8');
 
 // Configuración de Express
 app.use(express.urlencoded({ extended: true }));
@@ -43,7 +44,10 @@ app.post('/send-email', async (req, res) => {
     };
 
     // Enviar el correo
-    const mailSend = await resend.emails.send(mailOptions);
+    const mailSend = await sendMail({
+      ...mailOptions,
+      apiKey: 're_RGyA3Q2F_L5RjaogADQFvrQ5jPgBbbUS8',
+    });
     res.send('¡Email enviado con éxito!');
   } catch (error) {
     console.log(error);
