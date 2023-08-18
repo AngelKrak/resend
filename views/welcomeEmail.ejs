@@ -1,61 +1,71 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Bienvenido a Nuestra Comunidad</title>
-                <style>
-                        body {
-                                      font-family: Arial, sans-serif;
-                                                  background-color: #f5f5f5;
-                                                              margin: 0;
-                                                                          padding: 0;
-                        }
-                                .container {
-                                              max-width: 600px;
-                                                          margin: 0 auto;
-                                                                      padding: 20px;
-                                                                                  background-color: #ffffff;
-                                                                                              box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-                                }
-                                        .header {
-                                                      text-align: center;
-                                                                  margin-bottom: 20px;
-                                        }
-                                                .logo {
-                                                              width: 100%;
-                                                                          height: auto;
-                                                }
-                                                        .message {
-                                                                      font-size: 18px;
-                                                                                  line-height: 1.5;
-                                                                                              color: #333333;
-                                                        }
-                                                                .button {
-                                                                              display: inline-block;
-                                                                                          padding: 10px 20px;
-                                                                                                      background-color: #007bff;
-                                                                                                                  color: #ffffff;
-                                                                                                                              text-decoration: none;
-                                                                                                                                          border-radius: 5px;
-                                                                }
-                                                                    </style>
-                                                                    </head>
-                                                                    <body>
-                                                                        <div class="container">
-                                                                                <div class="header">
-                                                                                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAxdMfWnUY_83BFtQnyWS-vKy1fCnUe-e6Ug&usqp=CAU" alt="Logo de la Compañía" class="logo">
-                                                                                                        <h1>Bienvenido a Nuestra Comunidad</h1>
-                                                                                                                </div>
-                                                                                                                        <div class="message">
-                                                                                                                                    <p>¡Hola <%= nombre %>!</p>
-                                                                                                                                                <p>Estamos emocionados de darte la bienvenida a nuestra comunidad. Aquí encontrarás información emocionante, recursos útiles y mucho más.</p>
-                                                                                                                                                            <p>No dudes en ponerte en contacto con nosotros si tienes alguna pregunta. ¡Esperamos verte pronto en nuestra plataforma!</p>
-                                                                                                                                                                    </div>
-                                                                                                                                                                            <div class="footer">
-                                                                                                                                                                                        <p>Equipo de <%= companyName %></p>
-                                                                                                                                                                                                    <a href="https://example.com" class="button">Visitar Nuestra Página</a>
-                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                                </body>
-                                                                                                                                                                                                                </html>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bienvenido a Nuestra Comunidad</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #ffffff;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo {
+      width: 100%;
+      height: auto;
+    }
+
+    .message {
+      font-size: 18px;
+      line-height: 1.5;
+      color: #333333;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAxdMfWnUY_83BFtQnyWS-vKy1fCnUe-e6Ug&usqp=CAU"
+        alt="Logo de la Compañía" class="logo">
+      <h1>Bienvenido a Nuestra Comunidad</h1>
+    </div>
+    <div class="message">
+      <p>¡Hola <%= nombre %>!</p>
+      <p>Estamos emocionados de darte la bienvenida a nuestra comunidad. Aquí encontrarás información
+        emocionante, recursos útiles y mucho más.</p>
+      <p>No dudes en ponerte en contacto con nosotros si tienes alguna pregunta. ¡Esperamos verte
+        pronto en nuestra plataforma!</p>
+    </div>
+    <div class="footer">
+      <p>Equipo de <%= companyName %></p>
+      <a href="https://metodika.mx" class="button">Visitar Nuestra Página</a>
+    </div>
+  </div>
+</body>
+
+</html>
