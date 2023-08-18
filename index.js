@@ -36,7 +36,7 @@ app.post('/send-email', async (req, res) => {
 
     // Opciones del correo
     const mailOptions = {
-      from: 'Angel Ramirez <angel-krak@hotmail.com>',
+      from: 'Angel Ramirez <onboarding@resend.dev>',
       to: recipientEmail,
       subject: 'Bienvenido a Resend',
       html: renderedHTML,
