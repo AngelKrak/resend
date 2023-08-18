@@ -44,7 +44,10 @@ app.post('/send-email', async (req, res) => {
 
     // Enviar el correo
     const mailSend = await resend.emails.send(mailOptions);
-    res.send('¡Email enviado con éxito!');
+    console.log(mailSend);
+    res.send(
+      mailSend?.id ? '¡Email enviado con éxito!' : '¡Email fallo con éxito!'
+    );
   } catch (error) {
     console.log(error);
     res.send(error);
