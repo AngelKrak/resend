@@ -7,7 +7,6 @@ const app = express();
 const port = 3000;
 
 const resend = new Resend('re_RGyA3Q2F_L5RjaogADQFvrQ5jPgBbbUS8');
-console.log(resend.emails.send)
 
 // Configuración de Express
 app.use(express.urlencoded({ extended: true }));
@@ -29,25 +28,23 @@ app.post('/send-email', async (req, res) => {
     // Datos para reemplazar en la plantilla
     const data = {
       nombre: 'Angel',
-      companyName: 'Tu Compañía',
+      companyName: 'Metodika',
     };
 
     // Renderizar la plantilla EJS
     const renderedHTML = ejs.render(template, data);
-    console.log(renderedHTML)
 
     // Opciones del correo
     const mailOptions = {
-      from: 'Acme <onboarding@resend.dev>',
+      from: 'Angel Ramirez <angel-krak@hotmail.com>',
       to: recipientEmail,
-      subject: 'Welcome to Our Community',
+      subject: 'Bienvenido a Resend',
       html: renderedHTML,
     };
 
     // Enviar el correo
     const mailSend = await resend.emails.send(mailOptions);
-    //console.log(mailSend);
-    res.send('Email sent successfully!');
+    res.send('¡Email enviado con éxito!');
   } catch (error) {
     console.log(error);
     res.send(error);
